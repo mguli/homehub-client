@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 
+const HUBNAME_QUERY = gql`
+  {
+    system {
+      hubname
+    }
+  }
+`;
+
 class SetHubName extends Component {
   constructor(props) {
     super(props);
@@ -28,10 +36,15 @@ class SetHubName extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log("current name:", this.state.name);
     this.props.mutate({
       variables: {
         newname: this.state.name
+      },
+      update: (proxy, { data: { setHubname } }) => {
+        proxy.writeQuery({
+          query: HUBNAME_QUERY,
+          data: { system: { hubname: this.state.name, __typename: "System" } }
+        });
       }
     });
   };
