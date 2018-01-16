@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import HubName from "./HubName";
+import SetHubName from "./SetHubName";
+import Uptime from "./Uptime";
 import "./App.css";
 
 class App extends Component {
@@ -9,8 +11,11 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to HomeHub</h1>
           <HubName />
+          <Uptime />
         </header>
-        <p className="App-intro" />
+        <div className="App-intro">
+          <SetHubName />
+        </div>
       </div>
     );
   }

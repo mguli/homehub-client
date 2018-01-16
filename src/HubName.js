@@ -2,9 +2,13 @@ import React from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 
-const HubName = ({ data }) => (
+const HubName = ({ hubnameQuery }) => (
   <div>
-    <p>Hub: {data.system && data.system.hubname}</p>
+    <p>
+      Hub: {hubnameQuery.system && hubnameQuery.system.hubname}
+      {hubnameQuery.loading && "Loading..."}
+      {hubnameQuery.error && `Error: ${hubnameQuery.error.message}`}
+    </p>
   </div>
 );
 
@@ -16,4 +20,6 @@ const HUBNAME_QUERY = gql`
   }
 `;
 
-export default graphql(HUBNAME_QUERY)(HubName);
+//export default HubName;
+
+export default graphql(HUBNAME_QUERY, { name: "hubnameQuery" })(HubName);
