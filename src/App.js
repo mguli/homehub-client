@@ -3,6 +3,7 @@ import HubName from "./HubName";
 import SetHubName from "./SetHubName";
 import Uptime from "./Uptime";
 import AccessoryList from "./AccessoryList";
+import AddLight from "./AddLight";
 import "./App.css";
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
         </header>
         <div className="App-intro">
           <SetHubName />
+          <AddLight />
           <AccessoryList />
         </div>
       </div>
