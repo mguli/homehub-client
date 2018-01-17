@@ -1,0 +1,11 @@
+.accessory {
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 20em;
+  padding: 0.5rem;
+  background-color: beige;
+}
+
+.accessory h2 {
+  margin: 0;
+}

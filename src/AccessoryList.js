@@ -1,5 +1,6 @@
 import React from "react";
 import Accessory from "./Accessory";
+import "./AccessoryList.css";
 
 const accs = [
   { id: 1, _type: "Light", name: "Hall Light", brightnessLevel: 100 },

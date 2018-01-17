@@ -20,6 +20,4 @@ const HUBNAME_QUERY = gql`
   }
 `;
 
-//export default HubName;
-
 export default graphql(HUBNAME_QUERY, { name: "hubnameQuery" })(HubName);
