@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import HubName from "./HubName";
 import SetHubName from "./SetHubName";
 import Uptime from "./Uptime";
+import AccessoryList from "./AccessoryList";
 import "./App.css";
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
         </header>
         <div className="App-intro">
           <SetHubName />
+          <AccessoryList />
         </div>
       </div>
     );
